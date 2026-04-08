@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingStart="32dp"
+    android:paddingEnd="32dp">
+
+    <!-- Spacer to push content toward center -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
+
+    <!-- App icon -->
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_launcher"
+        android:scaleType="fitCenter" />
+
+    <!-- App title -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Indoor AR Navigator"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Navigate any indoor space with AR"
+        android:textColor="#AAAAAA"
+        android:textSize="15sp" />
+
+    <!-- Spacer between subtitle and buttons -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Begin Navigating button -->
+    <Button
+        android:id="@+id/btn_begin_navigating"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Begin Navigating"
+        android:textSize="16sp"
+        android:textColor="#121212"
+        android:backgroundTint="#FFFFFF"
+        android:stateListAnimator="@null" />
+
+    <!-- How to Use button -->
+    <Button
+        android:id="@+id/btn_how_to_use"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:text="How to Use"
+        android:textSize="16sp"
+        android:textColor="#CCCCCC"
+        android:background="@drawable/btn_outline" />
+
+    <!-- Bottom spacer -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
+
+</LinearLayout>

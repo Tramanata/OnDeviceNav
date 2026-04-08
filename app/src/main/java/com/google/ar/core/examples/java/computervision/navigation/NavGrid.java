@@ -159,8 +159,10 @@ public class NavGrid {
                                     cells[r][c] = CELL_STATIC_OBSTACLE;
                                 }
                             } else {
-                                // Floor-level: only mark walkable if not blocked by anything.
-                                if (cells[r][c] == CELL_UNKNOWN) {
+                                // Floor-level: erode polygon boundary by 1 cell so paths never
+                                // run along plane edges that may abut walls. Only mark walkable
+                                // if all 4 cardinal neighbours also fall inside the polygon.
+                                if (cells[r][c] == CELL_UNKNOWN && allCardinalNeighboursInPolygon(r, c, polyX, polyZ)) {
                                     cells[r][c] = CELL_WALKABLE;
                                 }
                             }
@@ -199,9 +201,9 @@ public class NavGrid {
                     if (worldPt[2] > maxZ) maxZ = worldPt[2];
                 }
 
-                // Expand by one cell so A* gets a safety margin around the wall.
-                minX -= CELL_SIZE; maxX += CELL_SIZE;
-                minZ -= CELL_SIZE; maxZ += CELL_SIZE;
+                // Expand by two cells so A* gets a 40 cm safety margin around walls.
+                minX -= 2 * CELL_SIZE; maxX += 2 * CELL_SIZE;
+                minZ -= 2 * CELL_SIZE; maxZ += 2 * CELL_SIZE;
 
                 // Compute clamped grid cell range without requiring worldToCell.
                 int rMin = Math.max(0, (int) Math.floor((minZ - originWorldZ) / CELL_SIZE));
@@ -314,6 +316,21 @@ public class NavGrid {
         } finally {
             lock.unlock();
         }
+    }
+
+    /**
+     * Returns true only if the 4 cardinal-neighbour cell centres of (row, col) are all
+     * inside the given polygon. Used to erode floor polygon boundaries by 1 cell so that
+     * walkable cells are never placed right at a plane edge (which may coincide with a wall).
+     */
+    private boolean allCardinalNeighboursInPolygon(int row, int col,
+                                                    float[] polyX, float[] polyZ) {
+        int[][] cardinals = {{row - 1, col}, {row + 1, col}, {row, col - 1}, {row, col + 1}};
+        for (int[] nb : cardinals) {
+            float[] wc = cellToWorld(nb[0], nb[1]);
+            if (!isPointInPolygon(wc[0], wc[2], polyX, polyZ)) return false;
+        }
+        return true;
     }
 
     // Standard ray-cast point-in-polygon test (XZ plane)

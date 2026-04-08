@@ -90,7 +90,7 @@ public class ComputerVisionActivity extends AppCompatActivity implements GLSurfa
   private static final String TAG = ComputerVisionActivity.class.getSimpleName();
 
   // ── Navigation constants ────────────────────────────────────────────────────
-  private static final float ARRIVAL_DISTANCE_M  = 0.6f;
+  private static final float ARRIVAL_DISTANCE_M  = 0.35f;
   private static final int   YOLO_EVERY_N_FRAMES = 10;
   private static final float Z_NEAR = 0.1f;
   private static final float Z_FAR  = 100.0f;

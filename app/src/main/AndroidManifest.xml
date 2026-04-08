@@ -40,9 +40,9 @@
       android:usesCleartextTraffic="false"
       tools:ignore="GoogleAppIndexingWarning">
 
+    <!-- Home screen: shown on launch -->
     <activity
-        android:name=".ComputerVisionActivity"
-        android:configChanges="orientation|screenSize"
+        android:name=".MainActivity"
         android:exported="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:screenOrientation="portrait">
@@ -51,6 +51,21 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
+
+    <!-- AR navigation screen -->
+    <activity
+        android:name=".ComputerVisionActivity"
+        android:configChanges="orientation|screenSize"
+        android:exported="false"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:screenOrientation="portrait" />
+
+    <!-- How to Use screen -->
+    <activity
+        android:name=".HowToUseActivity"
+        android:exported="false"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:screenOrientation="portrait" />
     <!-- Indicates whether "Google Play Services for AR" (ARCore) is "required" or "optional". -->
     <meta-data android:name="com.google.ar.core" android:value="required" />
   </application>

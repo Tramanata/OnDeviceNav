@@ -139,8 +139,8 @@ public class NavigationManager {
             };
 
             // Scale obstacle radius with detected bounding-box width:
-            // a wider box means a physically larger object. Clamp to [2, 6] cells.
-            int obstacleRadius = Math.max(2, Math.min(6, (int)(boxW * dims[0] / 80f)));
+            // a wider box means a physically larger object. Clamp to [1, 4] cells.
+            int obstacleRadius = Math.max(1, Math.min(4, (int)(boxW * dims[0] / 80f)));
 
             float imgY = det.box.bottom * dims[1];
 

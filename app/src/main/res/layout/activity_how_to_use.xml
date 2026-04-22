@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_how_to_use"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#1E1E1E"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!-- Scrollable instructions -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Getting Started"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Step 1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1.  Open your space"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap Begin Navigating from the home screen and point the camera at the floor in the room you want to navigate."
+                android:textColor="#BBBBBB"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 2 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2.  Scan the floor"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Move your phone slowly over the floor. A grid overlay will appear once a walkable surface is detected. Keep scanning until the area you want to navigate is covered."
+                android:textColor="#BBBBBB"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 3 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3.  Set your destination"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap any point on the floor to set it as your destination. A green marker shows your start position and a red marker shows the destination."
+                android:textColor="#BBBBBB"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 4 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4.  Follow the path"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="An orange path will appear on the floor. Follow the direction shown in the HUD (e.g. Turn left, Go straight). Distance to your destination is shown in feet."
+                android:textColor="#BBBBBB"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 5 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5.  Avoid obstacles"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The app detects people and objects in your path automatically. The route will update in real time to route around them."
+                android:textColor="#BBBBBB"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Step 6 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6.  Reset or navigate again"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap Reset at any time to set a new destination. Scan more floor area if the path cannot be computed."
+                android:textColor="#BBBBBB"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Tips -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tips"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Scan in good lighting for best plane detection.\n• Scan slowly and cover the full floor area before tapping a destination.\n• Walls are detected automatically — the path stays away from them.\n• If the path looks wrong, tap Reset and re-scan before setting a new destination."
+                android:textColor="#BBBBBB"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="32dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

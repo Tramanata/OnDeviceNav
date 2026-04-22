@@ -16,7 +16,7 @@ public class AStarPlanner {
 
     private static final float COST_CARDINAL    = 1.0f;
     private static final float COST_DIAGONAL    = 1.414f;
-    private static final float OBSTACLE_PENALTY = 2.0f; // extra cost for cells adjacent to obstacles
+    private static final float OBSTACLE_PENALTY = 4.0f; // extra cost for cells adjacent to obstacles
     // Allow traversal through unscanned cells — A* will prefer confirmed walkable cells but
     // won't report "no path found" just because the detour passes through unscanned floor.
     private static final float UNKNOWN_PENALTY  = 4.0f; // strongly prefer walkable, but don't block
